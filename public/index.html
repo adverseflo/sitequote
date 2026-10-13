@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SiteQuote</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>SiteQuote</h1>
+    <p class="tag">Describe the job. Get an itemised quote with live UK prices.</p>
+    <span id="mode" class="pill" hidden></span>
+  </header>
+
+  <main>
+    <form id="job-form">
+      <label for="description">Job description</label>
+      <textarea id="description" rows="5" placeholder="e.g. Knock through kitchen wall into dining room, about 3m wide, fit steel beam, replaster both sides"></textarea>
+      <div class="row">
+        <label>Labour rate (£/h) <input id="labour-rate" type="number" min="0" step="1" value="35"></label>
+        <label>Your business <input id="business-name" type="text" placeholder="e.g. Smith Builders Ltd"></label>
+        <label>Client <input id="client-name" type="text" placeholder="e.g. Mr & Mrs Jones"></label>
+      </div>
+      <button id="go" type="submit">Generate quote</button>
+      <p id="status" role="status"></p>
+    </form>
+
+    <section id="result" hidden>
+      <h2 id="summary"></h2>
+      <details id="assumptions-box">
+        <summary>Assumptions</summary>
+        <ul id="assumptions"></ul>
+      </details>
+
+      <h3>Materials</h3>
+      <table>
+        <thead><tr><th>Item</th><th>Qty</th><th>Unit</th><th>Unit price (ex VAT)</th><th>Amount</th><th>Source</th><th></th></tr></thead>
+        <tbody id="materials"></tbody>
+      </table>
+      <button type="button" class="ghost" id="add-material">+ Add material</button>
+
+      <h3>Labour</h3>
+      <table>
+        <thead><tr><th>Task</th><th>Hours</th><th>Amount</th><th></th></tr></thead>
+        <tbody id="tasks"></tbody>
+      </table>
+      <button type="button" class="ghost" id="add-task">+ Add task</button>
+
+      <dl id="totals"></dl>
+      <button type="button" id="pdf">Download PDF</button>
+      <p class="meta" id="meta"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "sitequote",
+  "version": "0.1.0",
+  "description": "AI agent that turns a job description into an itemised builder's quote, using NVIDIA Nemotron on Nebius Token Factory and live UK prices from Tavily",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "mock": "node --watch src/server.js --mock",
+    "models": "node scripts/check-models.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "pdfkit": "^0.15.0"
+  }
+}
